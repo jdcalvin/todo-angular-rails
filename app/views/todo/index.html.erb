@@ -8,7 +8,12 @@
 	<div ng-show="error">Error accessing tasks</div>
 	<ul>
 		<li ng-repeat="task in tasks">
-			{{task.title}} - Completed: {{task.completed}}
+			<input type='checkbox' data-ng-model='task.completed' data-ng-click='completeTask(task)'>
+			<form ng-submit="editTask(task)">
+			<input type="text" placeholder = "{{task.title}}" data-ng-model='task.title'>
+			 - Completed: {{task.completed}}
+			</form>
+			<a href='' data-ng-model='task.destroy' data-ng-click='deleteTask(task)'>delete</a>
 		</li>
 	</ul>
 </div>
