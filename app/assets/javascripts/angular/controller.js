@@ -1,8 +1,5 @@
-app.controller('TasksCtrl', ['$scope', '$resource', 
-	function($scope, $resource) {
-		var Task = $resource('/api/tasks/:id',
-			{id: '@id'},
-			{update: {method: "PUT"}});
+app.controller('TasksCtrl', ['$scope', 'Task', 
+	function($scope, Task) {
 
   	$scope.tasks = Task.query();
 
@@ -11,4 +8,8 @@ app.controller('TasksCtrl', ['$scope', '$resource',
   		$scope.tasks.push(task);
   		$scope.newTask = {};
   	};
+
+    $scope.completeTask = function(task) {
+      task.update();
+    }
 }]);
