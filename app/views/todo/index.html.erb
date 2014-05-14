@@ -1,0 +1,14 @@
+<h1>Todo List</h1>
+<div ng-controller="TasksCtrl">
+	<form ng-submit="createTask()">
+		<input type="text" ng-model='newTask.title' placeholder="Enter text">
+		<input type="submit" value="Add">
+	</form>
+	{{newTask.title}}
+	<div ng-show="error">Error accessing tasks</div>
+	<ul>
+		<li ng-repeat="task in tasks">
+			{{task.title}} - Completed: {{task.completed}}
+		</li>
+	</ul>
+</div>

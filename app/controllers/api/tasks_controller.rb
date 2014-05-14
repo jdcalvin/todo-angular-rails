@@ -29,7 +29,7 @@ module Api
 		end
 
 		def destroy
-			respond_with Task.destroy(params[:id])
+			respond_with @task.destroy
 		end
 
 		private

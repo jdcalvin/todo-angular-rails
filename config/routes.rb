@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
+  get 'todo/index'
+
   namespace :api, defaults: {format: :json} do
     resources :tasks
   end
+
+  root 'todo#index'
 
 
   # The priority is based upon order of creation: first created -> highest priority.
