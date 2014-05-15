@@ -2,25 +2,113 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+$strikethrough: #808080;
+
+$dark-gray: #333333;
+$light-gray: #DDD;
+
+#container {
+	padding:1em;
+	margin: 0 auto;
+	width: auto;
+	max-width: 600px;
+	background-color:white;
+	min-height: 500px;
+	box-shadow: -2px 2px 1px $dark-gray;
+	border:  1px solid $light-gray;
+}
+
+.table-header {
+	font-size: 1.5em;
+	text-align: center;
+}
+.checkbox-box {
+	width: 80px;
+}
+
+.delete {
+	text-align: right;
+	padding-right: 2em;
+}
+body {
+	margin-top: 5em;
+	text-align:center;
+	background:transparent;
+	height: 100%;
+	background-color: #394B73	;
+	text-shadow: 1px 2px 5px $light-gray;
+}
+
+@media screen and (max-width: 370px) {
+	.task-input {
+		float: none;	
+		width:100%;
+		padding-bottom: 1em;
+		margin-left: 2em;
+	}
+
+	.task-button {
+		float:none;
+		width: 100%;
+		padding-bottom: 1em;
+	}
+
+}
+.task-input {
+	float:left;
+	width:100%;
+}
+
+.task-button {
+		float:right;
+	
+}
+.new-item {
+
+	padding-bottom: 2em;
+}
 
 .completed  {
-	text-decoration: line-through;
-	color: #333333;
+	label {
+		text-decoration: line-through;
+		color: $strikethrough;
+	}
+	
 }
 
 table {
 	margin: 0 auto;
 	width: 80%;
-	border: 1px solid black;
-	td {
-		border: 1px solid black;
-	}
+	
 	tr {
 		line-height: 2em;
 	}
 }
 
+label {
+	font-weight: 500;
+}
+.task {
+	text-align: left;
+}
 
-.add-item {
-	display: inline-block;
+.delete {
+	a {
+		display:none;
+	}
+}
+tr:hover {
+	.delete {
+		a {
+			display: inline ;
+		}
+	}
+}
+
+.remove {
+	color: #a94442;
+}
+
+.remove-item:hover {
+	color: #750900;
 }

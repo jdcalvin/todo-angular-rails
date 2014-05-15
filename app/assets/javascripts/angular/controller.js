@@ -7,13 +7,13 @@ app.controller('TasksCtrl', ['$scope', 'Task',
   		var task = Task.save($scope.newTask);
   		$scope.tasks.push(task);
   		$scope.newTask = {};
-      $scope.editedTask = null;
   	};
 
     $scope.toggleTask = function(task) {
       Task.update(task, {completed: task.completed}); 
-      $scope.tasks
+      $scope.tasks;
     }
+
     $scope.selectTask = function() {
     }
 
@@ -28,12 +28,12 @@ app.controller('TasksCtrl', ['$scope', 'Task',
     }
 
     $scope.doneEditing = function(task) {
-      
       if (! angular.element(task.srcElement).hasClass('editable')) {
-            angular.forEach($scope.tasks, function (key, value) {
-               key.editing = false;
-            });
-        }
+          angular.forEach($scope.tasks, function (key, value) {
+             key.editing = false;
+          });
+      }
+
      Task.update(task);
     }
 }]);

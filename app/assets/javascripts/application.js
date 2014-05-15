@@ -12,6 +12,10 @@
 //
 //= require angular
 //= require angular-resource
+//= require angular-ui-bootstrap
 //= require main
+
 //= require_tree .
+
+
 

@@ -1,2 +1,2 @@
-var app = angular.module('Todo', ['ngResource']);
+var app = angular.module('Todo', ['ngResource', 'ui.bootstrap']);
 
