@@ -1,19 +1,38 @@
 <h1>Todo List</h1>
 <div ng-controller="TasksCtrl">
 	<form ng-submit="createTask()">
-		<input type="text" ng-model='newTask.title' placeholder="Enter text">
+		<input type="text" ng-model='newTask.title' placeholder="Enter text" autofocus>
 		<input type="submit" value="Add">
 	</form>
-	{{newTask.title}}
 	<div ng-show="error">Error accessing tasks</div>
-	<ul>
-		<li ng-repeat="task in tasks">
-			<input type='checkbox' data-ng-model='task.completed' data-ng-click='completeTask(task)'>
-			<form ng-submit="editTask(task)">
-			<input type="text" placeholder = "{{task.title}}" data-ng-model='task.title'>
-			 - Completed: {{task.completed}}
-			</form>
-			<a href='' data-ng-model='task.destroy' data-ng-click='deleteTask(task)'>delete</a>
-		</li>
-	</ul>
+
+	<table>
+	
+		<tbody>
+			<tr>
+				<th>Completed</th>
+				<th>Title</th>
+				<th>Delete</th>
+			</tr>
+			<tr ng-repeat="task in tasks">
+				<td>
+					<input type='checkbox' 
+						ng-model='task.completed' 
+						ng-change='toggleTask(task)'>
+				</td>
+				<td ng-class="{completed: task.completed}">
+					<label ng-dblclick="editTask(task)" 
+						class="editable" 
+						ng-hide="task.editing">{{task.title}}
+					</label>
+					<form class="add-item" ng-submit="doneEditing(task)" ng-show="task.editing">
+						<input class="editable" ng-model="task.title" ng-blur"doneEditing(task">
+					</form>
+				</td>
+				<td>
+					<a href='' ng-model='task.destroy' ng-click='deleteTask(task)'>delete</a>
+				</td>
+			</tr>
+		</tbody>
+	</table>
 </div>

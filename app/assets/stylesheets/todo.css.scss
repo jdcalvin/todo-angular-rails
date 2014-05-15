@@ -1,3 +1,26 @@
 // Place all the styles related to the todo controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.completed  {
+	text-decoration: line-through;
+	color: #333333;
+}
+
+table {
+	margin: 0 auto;
+	width: 80%;
+	border: 1px solid black;
+	td {
+		border: 1px solid black;
+	}
+	tr {
+		line-height: 2em;
+	}
+}
+
+
+.add-item {
+	display: inline-block;
+}
