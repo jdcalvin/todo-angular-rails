@@ -16,6 +16,7 @@ $light-gray: #DDD;
 	min-height: 500px;
 	box-shadow: -2px 2px 1px $dark-gray;
 	border:  1px solid $light-gray;
+	text-shadow: 1px 2px 5px $light-gray;
 }
 
 .table-header {
@@ -36,7 +37,7 @@ body {
 	background:transparent;
 	height: 100%;
 	background-color: #394B73	;
-	text-shadow: 1px 2px 5px $light-gray;
+	
 }
 
 @media screen and (max-width: 370px) {
@@ -106,9 +107,37 @@ tr:hover {
 }
 
 .remove {
-	color: #a94442;
+	color: #A0A0A0;
 }
 
-.remove-item:hover {
-	color: #750900;
+.remove:hover {
+	color: #9C1B14;
+	font-size: 120%;
+}
+.editable {
+	outline: 0;
+	padding:0;
+	margin-top: -1px;
+	border: none;
+	margin-bottom: 1px;
+	width: 100%;
+
+}
+
+#footer {
+	margin: 0 auto;
+	color: $strikethrough;
+	text-shadow: 1px 1px black;
+}
+
+a:hover{
+	text-decoration: none;
+	}
+
+.edit {
+	background-color: #FDF6D3;
+}
+
+input {
+	background: transparent;
 }

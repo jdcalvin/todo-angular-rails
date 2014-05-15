@@ -2,6 +2,9 @@ app.controller('TasksCtrl', ['$scope', 'Task',
 	function($scope, Task) {
 
   	$scope.tasks = Task.query();
+    $scope.editedTask = null;
+
+    
 
   	$scope.createTask = function() {
   		var task = Task.save($scope.newTask);
@@ -25,6 +28,7 @@ app.controller('TasksCtrl', ['$scope', 'Task',
 
     $scope.editTask = function(task) {
       task.editing=true;
+      $scope.editedTask = task;
     }
 
     $scope.doneEditing = function(task) {
@@ -33,7 +37,7 @@ app.controller('TasksCtrl', ['$scope', 'Task',
              key.editing = false;
           });
       }
-
-     Task.update(task);
+      Task.update(task);
+      $scope.editedTask = null;
     }
 }]);

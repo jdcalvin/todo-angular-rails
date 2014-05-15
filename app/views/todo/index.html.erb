@@ -1,5 +1,5 @@
 <div ng-controller="TasksCtrl">
-<h1>Todo List</h1>
+<h1>To Do List</h1>
 	<form class="form" role="form" ng-submit="createTask()">
 		<div class="form-group new-item">
 			<div style="width:80%">
@@ -17,10 +17,8 @@
 	<table class="table">
 	
 		<tbody>
-			<tr>
-				<th class="table-header" colspan="3">Listing Tasks</th>
-			</tr>
-			<tr ng-repeat="task in tasks">
+			
+			<tr ng-repeat="task in tasks" ng-class="{edit: task.editing}">
 				<td class="checkbox-box">
 					<input type='checkbox' 
 						ng-model='task.completed' 
@@ -32,7 +30,7 @@
 						ng-hide="task.editing">{{task.title}}
 					</label>
 					<form class="add-item" ng-submit="doneEditing(task)" ng-show="task.editing">
-						<input class="editable form-control" ng-model="task.title" ng-blur"doneEditing(task">
+						<input class="editable" ng-model="task.title" ng-blur="doneEditing(task)" ng-focus="task == editedTask">
 					</form>
 				</td>
 				<td class="delete">
