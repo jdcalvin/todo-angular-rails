@@ -3,10 +3,20 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 $strikethrough: #808080;
+$clear: #88B288;
 
 $dark-gray: #333333;
 $light-gray: #DDD;
 
+
+.form-control {
+	border-radius: 0;
+}
+
+
+.btn {
+	border-radius: 0;
+}
 #container {
 	padding:1em;
 	margin: 0 auto;
@@ -36,7 +46,7 @@ body {
 	text-align:center;
 	background:transparent;
 	height: 100%;
-	background-color: #394B73	;
+	background-color: #1E2128	;
 	
 }
 
@@ -60,6 +70,7 @@ body {
 	width:100%;
 }
 
+
 .task-button {
 		float:right;
 	
@@ -72,7 +83,7 @@ body {
 .completed  {
 	label {
 		text-decoration: line-through;
-		color: $strikethrough;
+		color: $clear;
 	}
 	
 }
@@ -124,10 +135,10 @@ tr:hover {
 
 }
 
+
 #footer {
 	margin: 0 auto;
 	color: $strikethrough;
-	text-shadow: 1px 1px black;
 }
 
 a:hover{

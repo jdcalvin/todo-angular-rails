@@ -4,7 +4,7 @@
 		<div class="form-group new-item">
 			<div style="width:80%">
 				<div class="task-input">
-					<input type="text" class="form-control" ng-model='newTask.title' placeholder="Enter a task" autofocus></input>
+					<input type="text" class=" new-task form-control" ng-model='newTask.title' placeholder="Enter a task" autofocus></input>
 				</div>
 			</div>
 			<div class="task-button">
@@ -20,7 +20,7 @@
 			
 			<tr ng-repeat="task in tasks" ng-class="{edit: task.editing}">
 				<td class="checkbox-box">
-					<input type='checkbox' 
+					<input type='checkbox' class="box"
 						ng-model='task.completed' 
 						ng-change='toggleTask(task)'>
 				</td>
