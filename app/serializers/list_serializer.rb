@@ -1,3 +1,3 @@
 class ListSerializer < ActiveModel::Serializer
-  attributes :id, :title, :tasks
+  attributes :id, :title, :tasks, :color
 end

@@ -39,7 +39,7 @@ module Api
 		end
 
 		def list_params
-			params.require(:list).permit(:id, :title)
+			params.require(:list).permit(:id, :title, :color)
 		end
 	end
 end

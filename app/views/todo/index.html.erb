@@ -2,7 +2,7 @@
 	
 	<tabset class="tabs">
 		<tab ng-repeat="list in lists" heading="{{list.title}}" active="list.active" disabled="list.disabled">
-			<div class="list-container">
+			<div class="list-container" style="background-color:{{list.color}}">
 				<div class="list-controls"><%=render 'controls'%></div>
 				<div class="list-header" ng-class="{edit: list.editing}">
 					<span ng-dblclick="editList(list)"  ng-hide="list.editing">{{list.title}}</span>
