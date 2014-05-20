@@ -1,0 +1,25 @@
+<table class="table">	
+		<tbody>	
+			<tr ng-repeat="task in list.tasks" ng-class="{edit: task.editing}">
+				<td class="checkbox-box">
+					<input type='checkbox' class="box"
+						ng-model='task.completed' 
+						ng-change='toggleTask(task)'>
+				</td>
+				<td class="task" ng-class="{completed: task.completed}">
+					<label ng-dblclick="editTask(task)" 
+						class="editable" 
+						ng-hide="task.editing">{{task.title}}
+					</label>
+					<form class="add-item" ng-submit="doneEditing(task)" ng-show="task.editing">
+						<input class="editable" ng-model="task.title" ng-blur="doneEditing(task)" ng-focus="task == editedTask">
+					</form>
+				</td>
+				<td class="delete">
+					<a href='' ng-model='task.destroy' ng-click='deleteTask(task)'>
+						<span class=" remove glyphicon glyphicon-trash"></span>
+					</a>
+				</td>
+			</tr>
+		</tbody>
+	</table>

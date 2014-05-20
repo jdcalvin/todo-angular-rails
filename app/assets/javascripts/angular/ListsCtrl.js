@@ -2,12 +2,19 @@ app.controller('ListsCtrl', ['$scope', 'List',
 	function($scope, List) {
 		$scope.lists = List.query();
 
-		$scope.setList = function(x) {
-			$scope.list = x;
-		};
-		$scope.listTasks = function(list) {
-			var tasks  = Task.query(list.id);
-			list.tasks.push(tasks);
-		};
+		$scope.editList = function(list) {
+			list.editing=true;
+			$scope.editedList = list;
+		}
+
+		$scope.doneEditing = function(list) {
+			if (! angular.element(list.srcElement).hasClass('editable')) {
+          angular.forEach($scope.lists, function (key, value) {
+             key.editing = false;
+          });
+      }
+      List.update(list);
+      $scope.editedList = null;
+		}
 
 }]);

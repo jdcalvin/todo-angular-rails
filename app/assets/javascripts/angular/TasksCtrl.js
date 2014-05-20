@@ -15,7 +15,7 @@ app.controller('TasksCtrl', ['$scope', 'Task',
 
     $scope.toggleTask = function(task) {
       Task.update(task, {completed: task.completed}); 
-      $scope.tasks;
+      $scope.list.tasks;
     }
 
     $scope.deleteTask = function(task) {
@@ -31,11 +31,12 @@ app.controller('TasksCtrl', ['$scope', 'Task',
 
     $scope.doneEditing = function(task) {
       if (! angular.element(task.srcElement).hasClass('editable')) {
-          angular.forEach($scope.tasks, function (key, value) {
+          angular.forEach($scope.list.tasks, function (key, value) {
              key.editing = false;
           });
       }
       Task.update(task);
       $scope.editedTask = null;
+      $scope.list.tasks;
     }
 }]);

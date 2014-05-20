@@ -152,3 +152,23 @@ a:hover{
 input {
 	background: transparent;
 }
+
+.errors {
+	color: red;
+	font-weight: 700;
+}
+
+.list-header input.editable {
+	background-color: #FDF6D3;
+	display: inline-block;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.list-header {
+	margin: 0 auto;
+	text-align: center;
+	
+	font-size: 3em;
+	
+}
