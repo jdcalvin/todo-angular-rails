@@ -13,20 +13,31 @@ $light-gray: #DDD;
 	border-radius: 0;
 }
 
+.add-list {
+	padding-top: 10px;
+	color: #54B84F;
+	display: block;
+	height: 42px;
+	width: 42px;
+	padding-bottom: .5em;
+	position:absolute;
+	text-align:center;
+	text-shadow: 1px 1px 4px $dark-gray;
+}
+
+.add-list:hover {
+cursor: pointer;
+font-size: 120%;
+}
 
 .btn {
 	border-radius: 0;
 }
 #container {
-	padding:1em;
 	margin: 0 auto;
 	width: auto;
 	max-width: 600px;
-	background-color:white;
-	min-height: 500px;
-	box-shadow: -2px 2px 1px $dark-gray;
-	border:  1px solid $light-gray;
-	text-shadow: 1px 2px 5px $light-gray;
+	
 }
 
 .table-header {
@@ -169,6 +180,56 @@ input {
 	margin: 0 auto;
 	text-align: center;
 	
-	font-size: 3em;
-	
+	font-size: 3em;	
 }
+
+.list-controls {
+	position:absolute;
+	right: 0;
+	font-size: 110%;
+	padding: .5em;
+	color: #808080;
+	bottom: 0;
+}
+.list-controls span {
+padding-top: 10px;
+	width: 35px;
+	height: 40px;
+	text-align:center;
+	display: inline-block;
+}
+
+.list-controls span:hover {
+	cursor:pointer;
+	font-size: 130%;
+}
+.list-container {
+	background-color:white;
+	min-height: 500px;
+	box-shadow: -2px 2px 1px $dark-gray;
+	border:  1px solid $light-gray;
+	text-shadow: 1px 2px 5px $light-gray;
+	padding:1em;
+	position: relative;
+}
+
+.tabs ul li.active a{
+	background-color: white;
+}
+
+.tabs ul li a {
+	background-color: #DDD;
+}
+.tabs ul li a:hover {
+	cursor: pointer;
+}
+
+.colors {
+	width:25px;
+	height: 25px;
+	float:left;
+	margin: 2px;
+}
+.color-picker {
+	width: 40px;
+};

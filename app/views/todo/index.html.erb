@@ -1,27 +1,34 @@
-<div ng-controller="ListsCtrl as list">
-	<div ng-repeat="list in lists">
-		<div class="list-header">
-			<span ng-dblclick="editList(list)" ng-class="{edit: list.editing}" ng-hide="list.editing">{{list.title}}</span>
-			<form class="edit-list" ng-submit="doneEditing(list)" ng-show="list.editing">
-					<input class="editable" ng-model="list.title" ng-blur="doneEditing(list)" ng-focus="list == editedList">
-			</form>
-		</div>
+<div ng-controller="ListsCtrl">
 	
-<div ng-controller="TasksCtrl">
-	<form class="form" role="form" ng-submit="createTask(list)">
-		<div class="form-group new-item">
-			<div style="width:80%">
-				<div class="task-input">
-					<input type="text" class=" new-task form-control" ng-model='newTask.title' placeholder="Enter a task" autofocus></input>
+	<tabset class="tabs">
+		<tab ng-repeat="list in lists" heading="{{list.title}}" active="list.active" disabled="list.disabled">
+			<div class="list-container">
+				<div class="list-controls"><%=render 'controls'%></div>
+				<div class="list-header" ng-class="{edit: list.editing}">
+					<span ng-dblclick="editList(list)"  ng-hide="list.editing">{{list.title}}</span>
+					<form class="edit-list" ng-submit="doneEditing(list)" ng-show="list.editing">
+							<input class="editable" ng-model="list.title" ng-blur="doneEditing(list)" ng-focus="list == editedList">
+					</form>
+				</div>	
+
+				<div ng-controller="TasksCtrl">
+					<form class="form" role="form" ng-submit="createTask(list)">
+						<div class="form-group new-item">
+							<div style="width:80%">
+								<div class="task-input">
+									<input type="text" class="new-task form-control" ng-model='newTask.title' placeholder="Enter a task" autofocus></input>
+								</div>
+							</div>
+							<div class="task-button">
+								<button class="btn btn-primary">Add</button>
+							</div>
+						</div>
+					</form>
+					<div ng-show="error" class="errors">Error accessing tasks</div>
+					<%= render 'tasks' %>
 				</div>
-			</div>
-			<div class="task-button">
-				<button class="btn btn-primary">Add</button>
-			</div>
-		</div>
-	</form>
-	<div ng-show="error" class="errors">Error accessing tasks</div>
-	<%= render 'tasks' %>
-</div>
-</div>
+			</div>			
+		</tab>
+		<li><span ng-hide="lists.length >= 5"ng-click="createList()" class="add-list glyphicon glyphicon-plus"></span></li>
+	</tabset>	
 </div>

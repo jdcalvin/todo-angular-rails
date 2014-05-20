@@ -19,7 +19,7 @@ app.controller('TasksCtrl', ['$scope', 'Task',
     }
 
     $scope.deleteTask = function(task) {
-      index = $scope.tasks.indexOf(task);
+      index = $scope.list.tasks.indexOf(task);
       Task.delete(task);
       $scope.list.tasks.splice(index, 1);
     }

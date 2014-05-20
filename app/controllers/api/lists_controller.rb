@@ -4,7 +4,7 @@ module Api
 		respond_to :json
 
 		def index
-			respond_with(List.all)
+			respond_with(List.all.order("Updated_at DESC"))
 		end
 
 		def show
@@ -12,7 +12,7 @@ module Api
 		end
 
 		def create
-			@list = list.new(list_params)
+			@list = List.new(list_params)
 			if @list.save
 				respond_to do |format|
 					format.json { render :json => @list}

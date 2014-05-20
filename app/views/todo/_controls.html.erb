@@ -1,0 +1,15 @@
+
+
+
+<div ng-controller="ColorsCtrl">
+    <!-- Simple dropdown -->
+    <span class="dropdown dropdown-toggle glyphicon glyphicon-cog" on-toggle="toggled(open)">
+     
+      <div class="color-picker dropdown-menu">
+        
+          <div ng-repeat="choice in items"class="colors" ng-click="toggleColor(choice)" style="background-color:#{{choice}}"></div>
+        
+      </div>
+    </span>
+    <span ng-click="deleteList(list)" class="glyphicon glyphicon-trash"></span>
+</div>
