@@ -8,4 +8,12 @@ describe Api::TasksController do
 			end.to change(Task, :count).by(1)
 		end
 	end
+
+	describe 'GET #index' do
+		before do
+			["hi","hello", "hey"].each do |x|
+				Task.create(title:x)
+			end
+		end
+		
 end

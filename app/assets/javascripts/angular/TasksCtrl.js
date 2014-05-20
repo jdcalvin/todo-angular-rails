@@ -6,9 +6,10 @@ app.controller('TasksCtrl', ['$scope', 'Task',
 
     
 
-  	$scope.createTask = function() {
+  	$scope.createTask = function(list) {
+      $scope.newTask.list_id = list.id;
   		var task = Task.save($scope.newTask);
-  		$scope.tasks.push(task);
+  		$scope.list.tasks.push(task);
   		$scope.newTask = {};
   	};
 
@@ -17,13 +18,10 @@ app.controller('TasksCtrl', ['$scope', 'Task',
       $scope.tasks;
     }
 
-    $scope.selectTask = function() {
-    }
-
     $scope.deleteTask = function(task) {
       index = $scope.tasks.indexOf(task);
       Task.delete(task);
-      $scope.tasks.splice(index, 1);
+      $scope.list.tasks.splice(index, 1);
     }
 
     $scope.editTask = function(task) {

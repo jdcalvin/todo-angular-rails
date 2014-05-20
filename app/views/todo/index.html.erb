@@ -1,6 +1,11 @@
+<div ng-controller="ListsCtrl as list">
+	<div ng-repeat="list in lists">
+	<h1>{{list.title}}</h1>
+	
+
 <div ng-controller="TasksCtrl">
 <h1>To Do List</h1>
-	<form class="form" role="form" ng-submit="createTask()">
+	<form class="form" role="form" ng-submit="createTask(list)">
 		<div class="form-group new-item">
 			<div style="width:80%">
 				<div class="task-input">
@@ -18,7 +23,7 @@
 	
 		<tbody>
 			
-			<tr ng-repeat="task in tasks" ng-class="{edit: task.editing}">
+			<tr ng-repeat="task in list.tasks" ng-class="{edit: task.editing}">
 				<td class="checkbox-box">
 					<input type='checkbox' class="box"
 						ng-model='task.completed' 
@@ -41,4 +46,6 @@
 			</tr>
 		</tbody>
 	</table>
+</div>
+</div>
 </div>

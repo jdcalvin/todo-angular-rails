@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
+
   get 'todo/index'
 
   namespace :api, defaults: {format: :json} do
-    resources :tasks
+    resources :lists do
+      resources :tasks
+    end
   end
 
   root 'todo#index'
