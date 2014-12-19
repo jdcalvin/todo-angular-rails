@@ -17,3 +17,11 @@ app.directive('ngBlur', function() {
     });
   };
 });
+
+app.directive('changeColor', function() {
+  return function(scope, elem, attrs ) {
+    elem.css({
+      'background-color': attrs
+    });
+  };
+});

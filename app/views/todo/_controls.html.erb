@@ -7,7 +7,7 @@
      
       <div class="color-picker dropdown-menu">
         
-          <div ng-repeat="choice in items"class="colors" ng-click="toggleColor(list,choice)" style="background-color:#{{choice}}"></div>
+          <div ng-repeat="choice in items"class="colors" ng-model="list.choice" ng-click="toggleColor(list, choice)" style="background-color:#{{choice}}"></div>
         
       </div>
     </span>

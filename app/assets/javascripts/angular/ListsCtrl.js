@@ -13,7 +13,7 @@ app.controller('ListsCtrl', ['$scope', 'List',
   	};
 
     $scope.toggleColor = function(list, color) {
-      List.update(list, {color:'#'+color});
+      List.update(list, {color: '#' + color});
       $scope.lists;
     }
 

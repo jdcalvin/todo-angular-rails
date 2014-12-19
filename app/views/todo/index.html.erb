@@ -2,15 +2,14 @@
 	
 	<tabset class="tabs">
 		<tab ng-repeat="list in lists" heading="{{list.title}}" active="list.active" disabled="list.disabled">
-			<div class="list-container" style="background-color:{{list.color}}">
+			<div class="list-container" change-color="list.color">
 				<div class="list-controls"><%=render 'controls'%></div>
 				<div class="list-header" ng-class="{edit: list.editing}">
 					<span ng-dblclick="editList(list)"  ng-hide="list.editing">{{list.title}}</span>
 					<form class="edit-list" ng-submit="doneEditing(list)" ng-show="list.editing">
 							<input class="editable" ng-model="list.title" ng-blur="doneEditing(list)" ng-focus="list == editedList">
 					</form>
-				</div>	
-
+				</div>
 				<div ng-controller="TasksCtrl">
 					<form class="form" role="form" ng-submit="createTask(list)">
 						<div class="form-group new-item">
